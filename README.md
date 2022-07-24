@@ -1,4 +1,5 @@
-#About the project 
+# About the project 
+
 This is a dashboard made using react redux tailwindcss react-minimal-chart 
 It has nutrition chart and walking graph
 
