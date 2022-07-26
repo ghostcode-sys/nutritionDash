@@ -6,7 +6,10 @@ import chevron from "../svgs/chevron.svg"
 import bell from "../svgs/bell.svg"
 import NutritionSvg from "../svgs/nutrition.svg"
 import Tooltip from "./Tooltip";
+import { useNavigate } from "react-router-dom";
 const Nutrition = ({ calories }) => {
+
+  const navigate = useNavigate()
   const dispatch = useDispatch();
 
   const [calTarget, setCalTarget] = useState(0);
@@ -95,7 +98,7 @@ const Nutrition = ({ calories }) => {
           -
         </button>
       </div>
-      <div className={"lg:flex lg:justify-center bg-black py-5 px-3 h-fit rounded-lg w-fit m-auto lg:m-0 my-5"}>
+      <div className={"lg:flex lg:justify-center bg-black py-5 px-3 h-fit rounded-lg w-fit m-auto lg:m-0 my-5"} onClick={() => navigate("/Nutrition")}>
         <img src={chevron} alt="chevron" className="lg:rotate-0 rotate-90"/>
       </div>
     </div>

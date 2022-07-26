@@ -4,9 +4,12 @@ import calender from "../svgs/calender.svg";
 import chevron from "../svgs/chevron.svg";
 import exclamation from "../svgs/exclamation.svg";
 import Workout from "../svgs/workout.svg"
+import { useNavigate } from "react-router-dom";
 
 const WorkoutDetail = ({ performedDate, scheduledDate, feedback }) => {
  
+  const navigate = useNavigate()
+
   const [isSameDay, setIsSameDay] = useState(false)
   const [date, setDate] = useState({
     pDay: "",
@@ -61,7 +64,7 @@ const WorkoutDetail = ({ performedDate, scheduledDate, feedback }) => {
           {date.sDay} <br/> {date.sMon}
         </div>
       </div>
-      <div className={feedback?"flex justify-center lg:mx-5 bg-black py-5 px-3 h-fit rounded-lg bg-red w-fit m-auto":"flex justify-center lg:mx-5 bg-black py-5 px-3 h-fit rounded-lg w-fit m-auto"}>
+      <div className={feedback?"flex justify-center lg:mx-5 bg-black py-5 px-3 h-fit rounded-lg bg-red w-fit m-auto":"flex justify-center lg:mx-5 bg-black py-5 px-3 h-fit rounded-lg w-fit m-auto"} onClick={() => navigate("/Workout")}>
         <img src={feedback?exclamation:chevron} alt="chevron" className={!feedback &&"rotate-90 lg:rotate-0"}/>
       </div>
     </div>
